@@ -1,0 +1,16 @@
+{
+  "tests": "./test/acceptance/*_test.js",
+  "timeout": 10000,
+  "output": "./output",
+  "helpers": {
+    "WebDriverIO": {
+      "url": "http://localhost:3000",
+      "browser": "chrome"
+    },
+    "FileSystem": {}
+  },
+  "include": {},
+  "bootstrap": false,
+  "mocha": {},
+  "name": "dannyBoyManager"
+}

@@ -1,0 +1,28 @@
+{
+  "name": "dannyboymanager",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www",
+    "acc": "node_modules/codeceptjs/bin/codecept.js run --steps",
+    "acc1": "node_modules/codeceptjs/bin/codecept.js run --steps --grep"
+  },
+  "dependencies": {
+    "body-parser": "~1.17.1",
+    "bootstrap": "^3.3.7",
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.6.3",
+    "ejs": "^2.5.6",
+    "express": "~4.15.2",
+    "http": "0.0.0",
+    "jade": "~1.11.0",
+    "jquery": "^3.2.1",
+    "morgan": "~1.8.1",
+    "serve-favicon": "~2.4.2"
+  },
+  "devDependencies": {
+    "codeceptjs": "^0.6.3",
+    "protractor": "^5.1.2",
+    "webdriverio": "^4.8.0"
+  }
+}

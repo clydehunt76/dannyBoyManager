@@ -1,0 +1,39 @@
+body {
+  padding: 10px 50px 50px 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+.dannyBoyBlue {
+  background-color: #074789;
+}
+
+.loginPanel {
+  padding-right: 60px;
+  padding-left: 60px;
+  padding-top: 20px;
+  padding-bottom: 48px;
+  border-radius: 0 0 6px 6px;
+  color: white;
+}
+
+#userIdEmail1,#password1 {
+  width: 50%;
+}
+
+#loginBannerImage img {
+  width: 100%;
+  border-radius: 6px 6px 0 0;
+}
+
+.ErrorDisplay {
+  color: red;
+  display: block; 
+}
+
+.ErrorHidden {
+  display: none;
+}
