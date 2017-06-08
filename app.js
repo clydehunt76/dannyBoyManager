@@ -7,7 +7,12 @@ var bodyParser = require('body-parser');
 
 var index = require('./routes/index');
 var login = require('./routes/login');
-var users = require('./routes/users');
+var home = require('./routes/home');
+
+var session = require('express-session')
+
+var passport = require("./common/loginHelper")
+
 
 var app = express();
 
@@ -25,9 +30,19 @@ app.use(bodyParser.urlencoded({
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.use(session({
+  secret: 'Abbey Vogue',
+  resave: false,
+  saveUninitialized: true,
+  cookie: { secure: true }
+}))
+
+app.use(passport.initialize());
+app.use(passport.session());
+
 app.use('/', index);
 app.use('/login', login);
-app.use('/users', users);
+app.use('/home', home);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

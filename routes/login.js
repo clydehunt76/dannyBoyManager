@@ -1,9 +1,14 @@
 var express = require('express');
 var router = express.Router();
 
+var passport = require("../common/loginHelper")
+
 /* POST Authentication request listing. */
-router.post('/', function(req, res, next) {
-    res.send('respond with a resource');
-});
+router.post('/',
+      passport.authenticate('local', { successRedirect: '/home', failureRedirect: '/'}),
+      function(req, res, next) {
+        console.log("Handling login request");
+      }
+);
 
 module.exports = router;
