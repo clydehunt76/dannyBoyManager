@@ -159,3 +159,43 @@ Scenario('LOGIN:TEST12: Confirm both error messages are displayed no values are 
     I.see("Please provide a valid email address")
     I.see("Please provide a password. Must be greater than 6 chars long and contain a mix of upper and lower case chars, and digits")
 });
+
+Scenario('LOGIN:TEST13: Confirm no error messages are displayed if valid values are entered', (I) => {
+    I.amOnPage('/');
+    I.see('Danny Boy Jazz & Blues Event Manager');
+    I.see('Username (email address)');
+    I.see('Password');
+
+    I.fillField('#userIdEmail1', 'valid@email.com')
+    I.fillField('#passwordField1', 'aValidpassw0rd')
+    I.click('#loginBtn')
+
+    I.dontSee("Please provide a valid email address")
+    I.dontSee("Please provide a password. Must be greater than 6 chars long and contain a mix of upper and lower case chars, and digits")
+});
+Feature('Testing base authentication functionality');
+
+BeforeSuite((I) => {
+    server = http.createServer(require('../../app'));
+    server.listen(3000);
+});
+
+AfterSuite((I) => {
+    server.close();
+});
+
+
+Scenario('LOGIN:AUTH:TEST1: Confirm both error messages are displayed no values are entered', (I) => {
+    I.amOnPage('/');
+    I.see('Danny Boy Jazz & Blues Event Manager');
+    I.see('Username (email address)');
+    I.see('Password');
+
+    I.fillField('#userIdEmail1', 'valid@email.com')
+    I.fillField('#passwordField1', 'aValidpassw0rd')
+
+    I.click('#loginBtn')
+
+    I.waitForText("Danny Boy Jazz & Blues Events Manager - Home")
+
+});
