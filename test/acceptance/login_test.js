@@ -185,7 +185,7 @@ AfterSuite((I) => {
 });
 
 
-Scenario('LOGIN:AUTH:TEST1: Confirm both error messages are displayed no values are entered', (I) => {
+Scenario('LOGIN:AUTH:TEST1: Confirm site redirects to home after successful authentication', (I) => {
     I.amOnPage('/');
     I.see('Danny Boy Jazz & Blues Event Manager');
     I.see('Username (email address)');
@@ -197,5 +197,22 @@ Scenario('LOGIN:AUTH:TEST1: Confirm both error messages are displayed no values 
     I.click('#loginBtn')
 
     I.waitForText("Danny Boy Jazz & Blues Events Manager - Home")
+    I.seeInCurrentUrl("/home")
+
+});
+
+Scenario('LOGIN:AUTH:TEST2: Confirm suitable error massage displayed after failed authentication', (I) => {
+    I.amOnPage('/');
+    I.see('Danny Boy Jazz & Blues Event Manager');
+    I.see('Username (email address)');
+    I.see('Password');
+
+    I.fillField('#userIdEmail1', 'valid@email.com')
+    I.fillField('#passwordField1', 'anInvalidpassw0rd')
+
+    I.click('#loginBtn')
+
+    I.waitForText("Invalid email and/or password supplied, please try again")
+    I.seeInCurrentUrl("/login")
 
 });
