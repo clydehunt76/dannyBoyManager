@@ -17,18 +17,8 @@
 
                 <div class="loginPanel">
                     <h2>Danny Boy Jazz &amp; Blues Event Manager</h2>
-                    <form id="loginForm" method="POST" action="/login">
-                      <div class="form-group">
-                        <label for="userIdEmail1">Username (email address)</label>
-                        <input type="text" class="form-control" id="userIdEmail1" placeholder="Email" name="username">
-                        <div id="loginEmailErrorMessage" class="ErrorHidden"></div>
-                      </div>
-                      <div class="form-group">
-                        <label for="passwordField1">Password</label>
-                        <input type="password" class="form-control" id="passwordField1" placeholder="Password" name="password">
-                        <div id="loginPasswordErrorMessage" class="ErrorHidden"></div>
-                      </div>
-                      <button id="loginBtn" type="button" class="btn btn-primary">Login</button>
+                    <form id="loginForm" method="GET" action="/login">
+                      <button id="loginBtn" type="button" class="btn btn-primary">Enter</button>
                     </form>
                 </div>
             </div>

@@ -12,6 +12,7 @@
   },
   "include": {},
   "bootstrap": false,
+  "teardown": "./test/teardown.js",
   "mocha": {},
   "name": "dannyBoyManager"
 }

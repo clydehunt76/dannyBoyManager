@@ -9,9 +9,9 @@ describe('Integration: login', function() {
         done();
     })
 
-    describe('POST /login', function() {
+    describe('get /login', function() {
         it('LOGIN:Test1: confirm a successful authentication', function(done) {
-            request(app).post('/login')
+            request(app).get('/login')
                 .expect(302, done);
         })
     })

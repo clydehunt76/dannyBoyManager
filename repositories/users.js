@@ -19,7 +19,7 @@ module.exports = {
         cb(null, model.attributes)
       }
       else {
-        cb(new Error('User Not Found'), null)
+        cb(new Error("User Not Found"), null)
       }
     })
     .catch(function(err) {
