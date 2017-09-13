@@ -1,23 +1,17 @@
+"use strict";
+
 var express = require('express');
 var router = express.Router();
 
 var passport = require("../common/loginHelper")
 
+console.log("In There...");
 
 const env = {
   AUTH0_CLIENT_ID: 'nqExifKJtiIZwqgQUsN60P4nJY5Jl1T_',
   AUTH0_DOMAIN: 'dannyboyeventsmanager.eu.auth0.com',
   AUTH0_CALLBACK_URL: 'http://localhost:3000/login/callback'
 };
-
-
-// /* POST Authentication request listing. */
-// router.post('/',
-//       passport.authenticate('local', { successRedirect: '/home', failureRedirect: '/', failureFlash: false}),
-//       function(req, res, next) {
-//         console.log("Handling login request");
-//       }
-// );
 
 // Perform the login
 router.get('/', passport.authenticate('auth0', {

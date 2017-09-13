@@ -10,7 +10,7 @@ describe('Integration: login', function() {
     })
 
     describe('get /login', function() {
-        it('LOGIN:Test1: confirm a successful authentication', function(done) {
+        it('LOGIN:Test1: Get the login endpoint successfully', function(done) {
             request(app).get('/login')
                 .expect(302, done);
         })

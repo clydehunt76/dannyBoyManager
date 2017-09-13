@@ -1,11 +1,14 @@
 "use strict";
 
-Feature('Testing base login functionality');
+var mock = require("mock-require")
+
+mock("../../common/loginHelper", "../mocks/loginHelper")
 
 var http = require('http');
 var app = require('../../app');
 var server;
-Feature('Testing base authentication functionality');
+
+Feature('Testing base login functionality');
 
 BeforeSuite((I) => {
     server = http.createServer(require('../../app'));
@@ -23,17 +26,6 @@ Scenario('LOGIN:AUTH:TEST1: Confirm site redirects to home after successful auth
     I.see('Enter');
 
     I.click('#loginBtn')
-    I.waitForText("Danny Boy Events Manager", 5)
-    I.wait(4)
-
-    I.clearCookie();
-    I.refreshPage();
-
-    I.fillField("email", "clydehunt@yahoo.co.uk")
-    I.fillField("password", "L1mavady");
-    I.click("LOG IN")
-
-    I.wait(3)
 
     I.waitForText("Danny Boy Jazz & Blues Events Manager - Home", 5)
     I.seeInCurrentUrl("/home")

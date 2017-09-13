@@ -36,6 +36,7 @@
     "chai": "^4.0.1",
     "codeceptjs": "^1.0.2",
     "mocha": "^3.4.2",
+    "mock-require": "^2.0.2",
     "protractor": "^5.1.2",
     "supertest": "^3.0.0",
     "webdriverio": "^4.8.0"
