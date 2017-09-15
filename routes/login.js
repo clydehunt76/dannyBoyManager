@@ -4,9 +4,6 @@ var express = require('express');
 var router = express.Router();
 
 var passport = require("../common/loginHelper")
-
-console.log("In There...");
-
 const env = {
   AUTH0_CLIENT_ID: 'nqExifKJtiIZwqgQUsN60P4nJY5Jl1T_',
   AUTH0_DOMAIN: 'dannyboyeventsmanager.eu.auth0.com',

@@ -1,40 +1,30 @@
 "use strict";
 
 module.exports = {
-  initialize: function() {
+  initialize : function() {
     console.log("Initialized");;
     return function(req, res, next) {
-       passport = this;
-       passport._key = 'passport';
-       passport._userProperty = 'user';
-       passport.serializeUser = function(user, done) {
-           return done(null, user.id);
-       };
-       passport.deserializeUser = function(user, done) {
-           return done(null, user);
-       };
-       req._passport = {
-           instance: passport
-       };
-       req._passport.session = {
-           user: new app.models.User({ id: 1, name: 'A Person' })
-       };
-
        return next();
     }
   },
-  session: function() {
+  
+  session : function() {
     console.log("Sessioned");
     return function(req, res, next) { return next() }
   },
-  use: function() {
+
+  use : function() {
     console.log("Used");
+    return function(req, res, next) {
+       return next();
+    }
   },
-  authenticate: function() {
+
+  authenticate : function() {
     console.log("Authenticated")
-    return function(req, res, next) { return next() }
-  },
-  log: function() {
-    console.log("Successfully Mocked");
+    return function(req, res, next) {
+       req.session.passport = 'mocked'
+       return next();
+    }
   }
 }

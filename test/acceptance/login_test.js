@@ -29,21 +29,4 @@ Scenario('LOGIN:AUTH:TEST1: Confirm site redirects to home after successful auth
 
     I.waitForText("Danny Boy Jazz & Blues Events Manager - Home", 5)
     I.seeInCurrentUrl("/home")
-
 });
-//
-// Scenario('LOGIN:AUTH:TEST2: Confirm suitable error massage displayed after failed authentication', (I) => {
-//     I.amOnPage('/');
-//     I.see('Danny Boy Jazz & Blues Event Manager');
-//     I.see('Username (email address)');
-//     I.see('Password');
-//
-//     I.fillField('#userIdEmail1', 'valid@email.com')
-//     I.fillField('#passwordField1', 'anInvalidpassw0rd')
-//
-//     I.click('#loginBtn')
-//
-//     I.waitForText("Invalid email and/or password supplied, please try again")
-//     I.seeInCurrentUrl("/login")
-//
-// });

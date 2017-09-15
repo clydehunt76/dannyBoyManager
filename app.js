@@ -12,7 +12,7 @@ var home = require('./routes/home');
 var session = require('express-session')
 
 var passport = require("./common/loginHelper")
-
+const flash = require('connect-flash');
 
 var app = express();
 
@@ -39,6 +39,28 @@ app.use(session({
 
 app.use(passport.initialize());
 app.use(passport.session());
+
+app.use(flash());
+
+// Handle auth failure error messages
+app.use(function(req, res, next) {
+ if (req && req.query && req.query.error) {
+   req.flash("error", req.query.error);
+ }
+ if (req && req.query && req.query.error_description) {
+   req.flash("error_description", req.query.error_description);
+ }
+ next();
+});
+
+// Check logged in
+app.use(function(req, res, next) {
+  res.locals.loggedIn = false;
+  if (req.session.passport && typeof req.session.passport.user != 'undefined') {
+    res.locals.loggedIn = true;
+  }
+  next();
+});
 
 app.use('/', index);
 app.use('/login', login);
