@@ -38,3 +38,8 @@ a {
 .ErrorHidden {
   display: none;
 }
+
+#logoutBtn {
+  float: right;
+  margin-bottom: 10px;
+}

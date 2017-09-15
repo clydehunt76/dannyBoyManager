@@ -7,10 +7,13 @@ module.exports = {
        return next();
     }
   },
-  
+
   session : function() {
     console.log("Sessioned");
-    return function(req, res, next) { return next() }
+    return function(req, res, next) {
+      req.logout = function() { return;}
+      return next()
+    }
   },
 
   use : function() {

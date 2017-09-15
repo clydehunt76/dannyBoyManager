@@ -19,7 +19,6 @@ AfterSuite((I) => {
     server.close();
 });
 
-
 Scenario('LOGIN:AUTH:TEST1: Confirm site redirects to home after successful authentication', (I) => {
     I.amOnPage('/');
     I.see('Danny Boy Jazz & Blues Event Manager');
@@ -29,4 +28,20 @@ Scenario('LOGIN:AUTH:TEST1: Confirm site redirects to home after successful auth
 
     I.waitForText("Danny Boy Jazz & Blues Events Manager - Home", 5)
     I.seeInCurrentUrl("/home")
+});
+
+Scenario('LOGIN:AUTH:TEST2: Confirm logout button exists on home page and redirects back to login page', (I) => {
+    I.amOnPage('/');
+    I.see('Danny Boy Jazz & Blues Event Manager');
+    I.see('Enter');
+
+    I.click('#loginBtn')
+
+    I.waitForText("Danny Boy Jazz & Blues Events Manager - Home", 5)
+    I.seeInCurrentUrl("/home")
+    I.click("#logoutBtn")
+
+    I.waitForText('Enter');
+    I.seeInCurrentUrl('/');
+
 });
