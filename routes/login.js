@@ -7,7 +7,9 @@ var passport = require("../common/loginHelper")
 const env = {
   AUTH0_CLIENT_ID: 'nqExifKJtiIZwqgQUsN60P4nJY5Jl1T_',
   AUTH0_DOMAIN: 'dannyboyeventsmanager.eu.auth0.com',
-  AUTH0_CALLBACK_URL: 'http://localhost:3000/login/callback'
+  AUTH0_CALLBACK_URL: 'http://localhost:3000/login/callback',
+  AUTH0_LOGOUT_URL: '/v2/logout',
+  HOME: 'localhost:3000'
 };
 
 // Perform the login
@@ -38,7 +40,7 @@ router.get(
 
 router.get('/logout', function(req, res) {
   req.logout();
-  res.redirect('/');
+  res.redirect('https://' + env.AUTH0_DOMAIN + env.AUTH0_LOGOUT_URL + '?federated&returnTo=http%3A%2F%2F' + env.HOME);
 });
 
 

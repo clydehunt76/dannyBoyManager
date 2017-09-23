@@ -34,7 +34,7 @@ app.use(session({
   secret: 'Abbey Vogue',
   resave: false,
   saveUninitialized: true,
-  cookie: { secure: true }
+  cookie: { secure: false }
 }))
 
 app.use(passport.initialize());
@@ -55,12 +55,16 @@ app.use(function(req, res, next) {
 
 // Check logged in
 app.use(function(req, res, next) {
+  console.log("Checking logged in status.....");
   res.locals.loggedIn = false;
+  console.log("Session:", req.session);
   if (req.session.passport && typeof req.session.passport.user != 'undefined') {
     res.locals.loggedIn = true;
   }
+  console.log("Logged in =", res.locals.loggedIn);
   next();
 });
+
 
 app.use('/', index);
 app.use('/login', login);

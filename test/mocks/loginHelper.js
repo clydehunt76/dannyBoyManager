@@ -11,7 +11,9 @@ module.exports = {
   session : function() {
     console.log("Sessioned");
     return function(req, res, next) {
+      req.session.passport = {user: 'mocked'}
       req.logout = function() { return;}
+      req.isAuthenticated = function() { return true; };
       return next()
     }
   },
@@ -26,7 +28,7 @@ module.exports = {
   authenticate : function() {
     console.log("Authenticated")
     return function(req, res, next) {
-       req.session.passport = 'mocked'
+       req.session.passport = {user: 'mocked'}
        return next();
     }
   }

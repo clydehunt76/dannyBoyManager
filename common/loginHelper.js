@@ -38,6 +38,7 @@ const auth0Strategy = new Auth0Strategy(
 passport.use(auth0Strategy);
 
 passport.serializeUser(function(user, done) {
+  console.log("User:", user);
   done(null, user);
 });
 
@@ -49,6 +50,7 @@ passport.serializeUser(function(user, done) {
 //   done(err, user);
 // });
 passport.deserializeUser(function(user, done) {
+  console.log("User:", user);
   done(null, user);
 });
 

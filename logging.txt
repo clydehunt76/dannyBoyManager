@@ -1,0 +1,96 @@
+
+> dannyboymanager@0.0.0 acc1 /home/clyde/workspace/dannyBoyManager
+> node_modules/codeceptjs/bin/codecept.js run --steps --grep "LOGIN:AUTH:TEST1:"
+
+Authenticated
+Authenticated
+Initialized
+Sessioned
+CodeceptJS v1.0.2
+Using test root "/home/clyde/workspace/dannyBoyManager"
+
+Testing base login functionality --
+ LOGIN:AUTH:TEST1: Confirm site redirects to home after successful authentication
+ • I am on page "/"
+Checking logged in status.....
+Session: Session {
+  cookie: 
+   { path: '/',
+     _expires: null,
+     originalMaxAge: null,
+     httpOnly: true,
+     secure: false },
+  passport: { user: 'mocked' } }
+Logged in = true
+Rendering root
+[0mGET / [32m200 [0m33.297 ms - 1140[0m
+[0mGET /assets/bootstrap/css/bootstrap.css [32m200 [0m18.368 ms - 146010[0m
+[0mGET /assets/bootstrap/css/bootstrap-theme.css [32m200 [0m16.212 ms - 26132[0m
+[0mGET /javascripts/login.js [32m200 [0m17.873 ms - 152[0m
+[0mGET /assets/bootstrap/js/bootstrap.js [32m200 [0m17.913 ms - 69707[0m
+[0mGET /stylesheets/style.css [32m200 [0m4.704 ms - 600[0m
+[0mGET /assets/jquery/jquery.js [32m200 [0m17.978 ms - 268039[0m
+[0mGET /images/header_2017_04-1.jpg [32m200 [0m1.692 ms - 160547[0m
+Checking logged in status.....
+Session: Session {
+  cookie: 
+   { path: '/',
+     _expires: null,
+     originalMaxAge: null,
+     httpOnly: true,
+     secure: false },
+  passport: { user: 'mocked' } }
+Logged in = true
+[0mGET /favicon.ico [33m404 [0m5.282 ms - 105[0m
+ • I see "Danny Boy Jazz & Blues Event Manager"
+ • I see "Enter"
+ • I click "#loginBtn"
+Checking logged in status.....
+Session: Session {
+  cookie: 
+   { path: '/',
+     _expires: null,
+     originalMaxAge: null,
+     httpOnly: true,
+     secure: false },
+  passport: { user: 'mocked' } }
+Logged in = true
+Processing login request
+[0mGET /login? [36m302 [0m12.252 ms - 74[0m
+Checking logged in status.....
+Session: Session {
+  cookie: 
+   { path: '/',
+     _expires: null,
+     originalMaxAge: null,
+     httpOnly: true,
+     secure: false },
+  passport: { user: 'mocked' } }
+Logged in = true
+Processing login callback request
+[0mGET /login/callback [36m302 [0m4.615 ms - 54[0m
+Checking logged in status.....
+Session: Session {
+  cookie: 
+   { path: '/',
+     _expires: null,
+     originalMaxAge: null,
+     httpOnly: true,
+     secure: false },
+  passport: { user: 'mocked' } }
+Logged in = true
+Rendering home
+[0mGET /home [32m200 [0m5.875 ms - 1321[0m
+[0mGET /assets/bootstrap/css/bootstrap.css [36m304 [0m1.935 ms - -[0m
+[0mGET /assets/bootstrap/css/bootstrap-theme.css [36m304 [0m0.783 ms - -[0m
+[0mGET /assets/jquery/jquery.js [36m304 [0m0.525 ms - -[0m
+[0mGET /assets/bootstrap/js/bootstrap.js [36m304 [0m2.804 ms - -[0m
+[0mGET /javascripts/login.js [36m304 [0m1.762 ms - -[0m
+[0mGET /stylesheets/style.css [36m304 [0m1.832 ms - -[0m
+[0mGET /images/header_2017_04-1.jpg [36m304 [0m2.326 ms - -[0m
+ • I wait for text "Danny Boy Jazz & Blues Events Manager - Home", 5
+ • I see in current url "/home"
+ ✓ OK in 1574ms
+
+
+  OK  | 1 passed   // 5s
