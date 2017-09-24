@@ -8,7 +8,8 @@
     "acc": "node_modules/codeceptjs/bin/codecept.js run --steps",
     "acc1": "node_modules/codeceptjs/bin/codecept.js run --steps --grep",
     "int": "./node_modules/mocha/bin/mocha test/integration/*test.js",
-    "int1": "./node_modules/mocha/bin/mocha test/integration/*test.js -g"
+    "int1": "./node_modules/mocha/bin/mocha test/integration/*test.js -g",
+    "build": "babel react/src -d public/react"
   },
   "dependencies": {
     "body-parser": "~1.17.1",
@@ -31,9 +32,16 @@
     "passport-auth0": "^0.6.0",
     "passport-local": "^1.0.0",
     "pg": "^6.4.0",
+    "react": "^15.6.1",
+    "react-bootstrap": "^0.31.3",
+    "react-dom": "^15.6.1",
     "serve-favicon": "~2.4.2"
   },
   "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.26.0",
+    "babel-preset-env": "^1.6.0",
+    "babel-preset-react": "^6.24.1",
     "chai": "^4.0.1",
     "codeceptjs": "^1.0.2",
     "mocha": "^3.4.2",
