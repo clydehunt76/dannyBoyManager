@@ -9,12 +9,15 @@
     "acc1": "node_modules/codeceptjs/bin/codecept.js run --steps --grep",
     "int": "./node_modules/mocha/bin/mocha test/integration/*test.js",
     "int1": "./node_modules/mocha/bin/mocha test/integration/*test.js -g",
-    "build": "babel react/src -d public/react"
+    "build": "babel react/src -d public/react",
+    "builder": "browserify -t [ babelify --presets [ react ] ] react/src/home.js -o public/react/react-bundle.js"
   },
   "dependencies": {
+    "babelify": "^7.3.0",
     "body-parser": "~1.17.1",
     "bookshelf": "^0.10.3",
     "bootstrap": "^3.3.7",
+    "browserify": "^14.5.0",
     "connect-ensure-login": "^0.1.1",
     "connect-flash": "^0.1.1",
     "cookie-parser": "~1.4.3",

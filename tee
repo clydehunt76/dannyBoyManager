@@ -1,9 +1,0 @@
-
-> dannyboymanager@0.0.0 acc1 /home/clyde/workspace/dannyBoyManager
-> node_modules/codeceptjs/bin/codecept.js run --steps --grep "LOGIN:AUTH:TEST1:" "logging.txt"
-
-CodeceptJS v1.0.2
-Using test root "/home/clyde/workspace/dannyBoyManager"
-
-
-  OK  | 0 passed   // 0ms
